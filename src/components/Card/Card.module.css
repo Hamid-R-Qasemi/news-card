@@ -1,0 +1,402 @@
+.flipCard {
+  position: relative;
+  transform-style: preserve-3d;
+  width: 400px;
+  max-width: 200%;
+}
+
+.frontCard {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  color: #003cac;
+}
+.backCard {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+  color: #0d5f18;
+}
+.cardBody {
+  margin-top: 100px;
+  width: 100%;
+  height: 510px;
+  background: #fff;
+  position: absolute;
+  padding-bottom: 40px;
+  border-radius: 5px;
+  top: 0px;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+.flip {
+  transform: rotateY(180deg);
+  transition: transform 500ms linear;
+}
+.unflip {
+  transform: rotateY(0deg);
+  transition: transform 500ms linear;
+}
+
+.card3d {
+  transform: translate3d(0px, 0px, 30px);
+}
+
+.cardContent {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 195px;
+}
+
+.title {
+  letter-spacing: 3px;
+  z-index: 1;
+}
+
+.blob {
+  position: absolute;
+  width: 150px;
+  top: 190px;
+  z-index: 0;
+}
+
+.location {
+  margin: 40px 0px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.location > svg {
+  width: 30px;
+  height: 30px;
+}
+.location > span {
+  display: block;
+}
+.frontBtn {
+  border: 0px;
+  background: #003cac;
+  color: #fff493;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: 200ms;
+}
+.frontBtn:hover {
+  background: #fff493;
+  color: #003cac;
+  cursor: pointer;
+}
+.backBtn {
+  border: 0px;
+  background-color: #004509;
+
+  color: #fff493;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: 200ms;
+}
+.backBtn:hover {
+  background: #fff493;
+  color: #004509;
+  cursor: pointer;
+}
+
+.price {
+  margin: 0px;
+  font-size: 30px;
+  font-weight: 200;
+  position: relative;
+}
+.price::after {
+  content: "hrs";
+  font-size: 20px;
+  position: absolute;
+  right: -30px;
+  top: 4px;
+}
+.price::before {
+  content: "$";
+  font-size: 20px;
+  position: absolute;
+  left: -15px;
+  top: 4px;
+}
+
+.sea {
+  position: absolute;
+  top: 0px;
+}
+
+.kayak {
+  position: absolute;
+  left: -50%;
+  top: -80px;
+}
+.waterSplash {
+  position: absolute;
+  width: 300px;
+  right: -50px;
+  top: -65px;
+}
+.stone {
+  position: absolute;
+  width: 110px;
+  bottom: -85px;
+  right: -25px;
+}
+
+.grass {
+  position: absolute;
+  top: 0px;
+}
+
+.camp {
+  position: absolute;
+  left: -25%;
+  top: -110px;
+  width: 20rem;
+}
+.ivy {
+  position: absolute;
+  width: 21rem;
+  right: -8rem;
+  top: -65px;
+  transform: rotate(10deg);
+}
+.ivyRock {
+  position: absolute;
+  width: 120px;
+  bottom: -85px;
+  right: -25px;
+}
+
+/* front card animatons */
+
+.kayakFadeOut {
+  animation-name: kayakFadeAnimationOut;
+  animation-duration: 300ms;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+}
+
+.kayakFadeIn {
+  animation-name: kayakFadeAnimationIn;
+  animation-duration: 300ms;
+  animation-delay: 1000ms;
+  animation-fill-mode: backwards;
+  animation-iteration-count: 1;
+}
+
+@keyframes kayakFadeAnimationOut {
+  0% {
+    transform: translate(0px);
+    opacity: 100;
+  }
+  100% {
+    transform: translate(-50px, 50px);
+    opacity: 0;
+  }
+}
+@keyframes kayakFadeAnimationIn {
+  0% {
+    transform: translate(-50px, 50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0px);
+    opacity: 100;
+  }
+}
+
+.waterSplashFadeOut {
+  animation-name: waterSplashFadeAnimationOut;
+  animation-duration: 300ms;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+}
+
+.waterSplashFadeIn {
+  animation-name: waterSplashFadeAnimationIn;
+  animation-duration: 300ms;
+  animation-delay: 1000ms;
+  animation-fill-mode: backwards;
+  animation-iteration-count: 1;
+}
+
+@keyframes waterSplashFadeAnimationOut {
+  0% {
+    transform: translate(0px) scale(1);
+    opacity: 100;
+  }
+  100% {
+    transform: translate(-50px, 50px) scale(0.5);
+    opacity: 0;
+  }
+}
+
+@keyframes waterSplashFadeAnimationIn {
+  0% {
+    transform: translate(-50px, 50px) scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0) scale(1);
+    opacity: 100;
+  }
+}
+
+.stoneFadeOut {
+  animation-name: stoneFadeAnimationOut;
+  animation-duration: 300ms;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+}
+
+.stoneFadeIn {
+  animation-name: stoneFadeAnimationIn;
+  animation-duration: 300ms;
+  animation-delay: 1000ms;
+  animation-fill-mode: backwards;
+  animation-iteration-count: 1;
+}
+
+@keyframes stoneFadeAnimationOut {
+  0% {
+    transform: scale(1);
+    opacity: 100;
+  }
+  100% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+}
+
+@keyframes stoneFadeAnimationIn {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 100;
+  }
+}
+
+/* back card animations */
+
+.campFadeOut {
+  animation-name: campFadeAnimationOut;
+  animation-duration: 300ms;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+}
+
+.campFadeIn {
+  animation-name: campFadeAnimationIn;
+  animation-duration: 300ms;
+  animation-delay: 1000ms;
+  animation-fill-mode: backwards;
+  animation-iteration-count: 1;
+}
+
+@keyframes campFadeAnimationOut {
+  0% {
+    transform: scale(1);
+    opacity: 100;
+  }
+  100% {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+}
+@keyframes campFadeAnimationIn {
+  0% {
+    transform: scale(0.6);
+
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+
+    opacity: 100;
+  }
+}
+
+.ivyFadeOut {
+  animation-name: ivyFadeAnimationOut;
+  animation-duration: 300ms;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+}
+
+.ivyFadeIn {
+  animation-name: ivyFadeAnimationIn;
+  animation-duration: 300ms;
+  animation-delay: 1000ms;
+  animation-fill-mode: backwards;
+  animation-iteration-count: 1;
+}
+
+@keyframes ivyFadeAnimationOut {
+  0% {
+    transform: scale(1) rotate(10deg);
+    opacity: 100;
+  }
+  100% {
+    transform: scale(0.6) rotate(0deg);
+    opacity: 0;
+  }
+}
+
+@keyframes ivyFadeAnimationIn {
+  0% {
+    transform: scale(0.6) rotate(0deg);
+
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1) rotate(10deg);
+
+    opacity: 100;
+  }
+}
+
+.ivyRockFadeOut {
+  animation-name: ivyRockFadeAnimationOut;
+  animation-duration: 300ms;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+}
+
+.ivyRockFadeIn {
+  animation-name: ivyRockFadeAnimationIn;
+  animation-duration: 300ms;
+  animation-delay: 1000ms;
+  animation-fill-mode: backwards;
+  animation-iteration-count: 1;
+}
+
+@keyframes ivyRockFadeAnimationOut {
+  0% {
+    transform: scale(1);
+    opacity: 100;
+  }
+  100% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+}
+
+@keyframes ivyRockFadeAnimationIn {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 100;
+  }
+}
